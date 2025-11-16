@@ -1,2 +1,2 @@
 # 1a-o
-mi primer año en ing. civil informatica (Python)
+mi primer año en ing. civil informatica (la mayoria Python)
