@@ -1,0 +1,39 @@
+¿Cuál es el propósito principal de la estructura `Nodo` en el código proporcionado para la compresión Huffman?
+Almacenar el valor del píxel y su frecuencia.
+La estructura `Nodo` está diseñada para representar un nodo en el árbol de Huffman, guardando el valor del píxel y su frecuencia de aparición.
+
+¿Qué funcionalidad específica cumple la función `insertarNodo` dentro del proceso de construcción del árbol de Huffman?
+Asegura que los nodos se inserten manteniendo un orden ascendente por frecuencia.
+La función `insertarNodo` se encarga de insertar nuevos nodos en la lista enlazada de manera que la lista permanezca ordenada por la frecuencia de los nodos, lo cual es crucial para el algoritmo de Huffman.
+
+¿Cómo se logra la escritura de bits individuales en un archivo en la función `escribirBit`?
+Mediante el desplazamiento de bits en un buffer y la escritura cuando se llena (cada 8 bits).
+La función `escribirBit` utiliza `g_bufferBits` y `g_contadorBits` para acumular bits. Cuando el contador llega a 8, el byte completo se escribe en el archivo.
+
+En la función `cargarImagenAMatriz`, ¿para qué se utiliza `fscanf` y `fgetc` al inicio?
+Para saltar líneas de comentarios y leer las dimensiones y el valor máximo de píxel.
+`cargarImagenAMatriz` lee el número mágico, salta comentarios (líneas que empiezan con '#') y luego extrae el ancho, alto y valor máximo de la imagen PGM del encabezado del archivo.
+
+¿Cómo se calculan las frecuencias de cada nivel de gris en la función `calcularFrecuencias`?
+Recorriendo la matriz de la imagen y contando cada aparición de un valor de píxel.
+La función `calcularFrecuencias` inicializa un array de frecuencias a cero y luego itera sobre cada píxel en `matrizImagen`, incrementando el contador para el valor de píxel correspondiente en el array `frecuencias`.
+
+La función `generarCodigosHuffman` se encarga de asignar un código binario único a cada valor de píxel. ¿Cómo se construye este código para cada píxel?
+Asignar '0' a la rama izquierda y '1' a la rama derecha durante un recorrido recursivo del árbol.
+La función `generarCodigosHuffman` es recursiva. Para un nodo, añade '0' al código actual si va a la izquierda y '1' si va a la derecha, construyendo así los códigos únicos.
+
+¿Qué información adicional se almacena en el archivo comprimido junto con los datos codificados de la imagen, y por qué es necesaria?
+Guardar el ancho, alto y las frecuencias de los píxeles antes de los datos comprimidos de la imagen.
+Para la descompresión, es esencial conocer las dimensiones originales de la imagen (ancho y alto) y las frecuencias de los píxeles. Estas frecuencias permiten reconstruir el árbol de Huffman, que es necesario para decodificar los datos comprimidos.
+
+En la función `descomprimirYReconstruir`, ¿cómo se decodifica cada píxel a partir de los bits leídos del archivo comprimido?
+Recorriendo el árbol de Huffman reconstruido bit a bit hasta llegar a un nodo hoja.
+En la descompresión, se lee un bit a la vez del archivo comprimido. Si es '0', se va a la rama izquierda; si es '1', a la derecha. Este proceso continúa hasta llegar a un nodo hoja, cuyo `valorPixel` es el píxel decodificado.
+
+¿Cómo se valida la eficiencia de la compresión y la corrección de la descompresión en la función `main`?
+Mediante la comparación de las dimensiones de la imagen y los valores de píxel, así como los tamaños de archivo.
+La validación de eficiencia y corrección se realiza comparando el ancho y alto de la imagen original y la descomprimida, verificando píxel a píxel si hay diferencias en los valores, y comparando los tamaños de los archivos original y comprimido para medir la eficiencia de compresión.
+
+¿Cuál es la importancia de la función `liberarArbolHuffman`?
+Para liberar la memoria asignada dinámicamente a los nodos del árbol de Huffman, evitando fugas de memoria.
+`liberarArbolHuffman` es una función recursiva que recorre el árbol de Huffman y libera la memoria de cada nodo, lo cual es fundamental para prevenir fugas de memoria, especialmente en programas de larga ejecución o que procesan múltiples imágenes.
