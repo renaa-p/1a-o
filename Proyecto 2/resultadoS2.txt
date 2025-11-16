@@ -1,0 +1,23 @@
+Autor(es): Felipe Jara - Renato Ortiz
+Cantidad de aves muertas por región:
+Nombre de la región: Arica y Parinacota, 31835
+Nombre de la región: Tarapaca, 4884
+Nombre de la región: Antofagasta, 24549
+Nombre de la región: Atacama, 8157
+Nombre de la región: Coquimbo, 5221
+Nombre de la región: Valparaiso, 7353
+Nombre de la región: O’Higgins, 1134
+Nombre de la región: Maule, 3274
+Nombre de la región: Ñuble, 301
+Nombre de la región: Biobio, 6325
+Nombre de la región: Araucania, 25
+Nombre de la región: Los Rios, 666
+Nombre de la región: Los Lagos, 62
+Nombre de la región: Aysen, 9
+Nombre de la región: Magallanes, 282
+
+Casos aves muertas mes enero del año 2023: 5738
+
+En la comuna de Cartagena se detectaron 2 Taguas muertas.
+
+Las muertes detectadas para el 12 de febrero del 2023 de la especie Piquero son: 31
